@@ -146,9 +146,9 @@ def draw_window(surface, font):
     apple.draw(surface)
     draw_grid(size, rows, surface)
     textsurface = font.render(f'Eaten apples: {apple_counter}', False, (255, 0, 0))
-    surface.blit(textsurface, (10, 500))
+    surface.blit(textsurface, (10, info_y))
     textsurface2 = font.render(f'Score: {score}', False, (0, 0, 250))
-    surface.blit(textsurface2, (200, 500))
+    surface.blit(textsurface2, (200, info_y))
     pygame.display.update()
 
 
@@ -165,11 +165,12 @@ def random_apple(snake):
     return (x, y)
 
 def main():
-    global size, rows, s, apple, apple_counter, score
-    size = 500  # rozmiar gry
+    global size, rows, s, apple, apple_counter, score, info_y
+    info_y = 658
+    size = 660  # rozmiar gry
     rows = 20
 
-    window = pygame.display.set_mode((size, 540))
+    window = pygame.display.set_mode((size, size + 40))
     clock = pygame.time.Clock()
     pygame.font.init()
     active_game = True
