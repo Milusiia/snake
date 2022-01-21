@@ -93,10 +93,12 @@ class Snake(object):
 
     def head_has_collision_with_tail(self):
         if self.body[0].pos in [x.pos for x in self.body[1:]]:
+
             return True
         return False
 
     def reset(self):
+
         self.game_over = True
         self.dirnx = 0
         self.dirny = 0
@@ -186,7 +188,9 @@ def main():
         flag = True  # jeżeli true to gra działa
         font_comic = pygame.font.SysFont('Comic Sans MS', 20)
         while flag:
+
             if s.game_over:
+
                 text = "press x for new game"
                 textsurface = font_comic.render(text, False, (0, 0, 0))
                 window.blit(textsurface, (150, 250))
@@ -196,15 +200,18 @@ def main():
                 pygame.display.update()
                 #time.sleep(5)
                 #pygame.time.wait(1000)
+                x
                 key = pygame.key.get_pressed()
                 if key[pygame.K_x]:
                     flag = False
+
                 elif key[pygame.K_y]:
                     active_game = False
                     flag = False
             pygame.time.delay(50)  # im mniejsza wartość delay tym gra szybsza
             clock.tick(x)  # im mniej tym gra wolniejsza
             s.move()
+
             if s.body[0].pos == apple.pos:
                 if gold_or_red % 5 == 0:
                     score+=3*x
@@ -220,6 +227,8 @@ def main():
                     apple = Cube(random_apple(s), color=(255, 215, 0))
                 else:
                     apple = Cube(random_apple(s), color=(255, 0, 0))
+                print("score:", score)
+                print("eaten apples:", apple_counter)
             draw_window(window, font_comic)
 
 main()
