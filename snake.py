@@ -227,8 +227,8 @@ def main():
                     apple = Cube(random_apple(s), color=(255, 215, 0))
                 else:
                     apple = Cube(random_apple(s), color=(255, 0, 0))
-                print("score: ", score)
-                print("eaten apples: ", apple_counter)
+                print("score:", score)
+                print("eaten apples:", apple_counter)
             draw_window(window, font_comic)
 
 main()

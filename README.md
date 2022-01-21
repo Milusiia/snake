@@ -7,7 +7,7 @@ Snake game made with pygame.
 
 # How to play
 1. Use w,a,s,d
-2. If you lose, press x for new game or y for close game 
+2. If you lose, press x for new game or y for close game
 
 # Run in Gitpod
 
